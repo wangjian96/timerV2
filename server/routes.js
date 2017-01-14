@@ -13,7 +13,6 @@ module.exports = function(app) {
     router.get('/student', student.get);
     router.get('/about', home.about);
     router.get('/login', home.login);
-    router.get('/timer', home.timer);
     router.post('/login', home.loginsubmit);
     router.post('/student', student.post);
     router.post('/images', image.create);

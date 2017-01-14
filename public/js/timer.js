@@ -280,9 +280,9 @@ $(document).ready(function(){
         intevals[dataIndex] = setInterval(function () {
 			//calculate time left with formate
             var timeLeft = Math.round((timers[dataIndex].doneTIme - $.now()) / 1000);
-            hour.val(Math.floor(timeLeft / 3600));
-            minute.val(Math.floor((timeLeft % 3600) / 60));
-            second.val(Math.round(timeLeft % 3600 % 60));
+            hour.val(pad(Math.floor(timeLeft / 3600), 2));
+            minute.val(pad(Math.floor((timeLeft % 3600) / 60), 2));
+            second.val(pad(Math.round(timeLeft % 3600 % 60), 2));
 			//detect if it is done time now
             if ($.now() >= timers[dataIndex].doneTIme) {
 				//change state to 3 which is done
