@@ -12,7 +12,7 @@
       <li><a href="/about">About</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="/"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
+      <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
     </ul>
   </div>
 </nav>
@@ -83,6 +83,18 @@
                 <button type="button" class="btn btn-default timerresume">Resume</button>
                 <button type="button" class="btn btn-default timerresetvisibility timerreset">Reset</button>
                 <button type="button" class="btn btn-default timerdone">Done</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="border-top: solid 1px #eee; padding-top: 1em;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <p class="text-muted">Wang Jian's Timer</p>
+                {{#if times}}
+                <p>You have visited {{times}} times -Last Access- {{date}}</p>
+                {{/if}}
             </div>
         </div>
     </div>

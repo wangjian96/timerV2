@@ -13,6 +13,9 @@ module.exports = function(app) {
     router.get('/student', student.get);
     router.get('/about', home.about);
     router.get('/login', home.login);
+    router.get('/register', home.register);
+    router.get('/logout', home.logout);
+    router.post('/register', home.registersubmit);
     router.post('/login', home.loginsubmit);
     router.post('/student', student.post);
     router.post('/images', image.create);

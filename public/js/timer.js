@@ -50,6 +50,7 @@ clickEvents['stop'] = [];
 clickEvents['resume'] = [];
 clickEvents['reset'] = [];
 clickEvents['done'] = [];
+var emailreg = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
 //for loop to initiate each timer
 for (var i = 0; i < 3; i++) {
@@ -83,7 +84,37 @@ $(document).ready(function(){
              //   console.log(data);
            // }); 
    //});
+   //hide register error first
+   $('#regError').hide();
+   //if register submit button is clicked
+   $('#reg').on('click', function(e){
+        //check whether each field is filled
+        var user = $('#usr').val();
+        if($('#usr').val().length == 0){
+           $('#regError').show();
+           e.preventDefault();
+        }else if($('#pwd').val().length == 0){
+           $('#regError').show();
+           e.preventDefault();
+        }else if($('#pwd2').val().length == 0){
+           $('#regError').show();
+           e.preventDefault();
+        }else if($('#email').val().length == 0){
+           $('#regError').show();
+           e.preventDefault();
+        //check if two passwords are same
+        }else if($('#pwd').val() != $('#pwd2').val()){
+           $('#regError').show();
+           e.preventDefault();
+        //check email is in correct pattern
+        }else if(!$('#email').val().match(emailreg)){
+           $('#regError').show();
+           e.preventDefault();
+        }else{
+         
+        }
 
+   });
 //limit user can only type numbers
     $('.hours,.minutes,.seconds').keypress(function (e) {
         if (e.keyCode < 48 || e.keyCode > 57) {
